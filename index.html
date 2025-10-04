@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Junchao Huang</title>
+<meta name="author" content="Junchao Huang">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<script type="text/javascript">
+function display(id) {
+var target = document.getElementById(id);
+if (target.style.display == "none") {
+target.style.display = "";
+} else {
+target.style.display = "none";
+}
+}
+</script>
+<style>
+/* CSS styles inline for completeness */
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
+
+body,
+td,
+th,
+tr,
+p,
+a {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px
+}
+
+strong {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+heading {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+papertitle {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700
+}
+
+name {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 32px;
+}
+
+.one {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.two {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+.fade {
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+span.highlight {
+  background-color: #ffffd0;
+}
+</style>
+</head>
+
+<body>
+<table
+style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr style="padding:0px">
+<td style="padding:0px">
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr style="padding:0px">
+<td style="padding:2.5%;width:63%;vertical-align:middle">
+<p style="text-align:center">
+<name>Junchao Huang</name>
+</p>
+<p>
+I am a Ph.D. student in the School of Data Science, <a href="https://www.cuhk.edu.cn/en">The Chinese University of Hong Kong, Shenzhen (CUHK-SZ)</a>, supervised by Prof. <a href="https://llijiang.github.io/">Li Jiang</a>.
+
+Before joining CUHK-SZ, I received the B.E. degree from <a href="https://www.tju.edu.cn/">Tianjin University (TJU)</a> in 2025.
+</p>
+
+<p>
+My research interests lie in computer vision and artificial intelligence, with a focus on world models, generative models (video & 3D), and multimodal learning.
+</p>
+
+<p style="text-align:center">
+<a href="mailto:junchaohuang@link.cuhk.edu.cn">Email</a> &nbsp/&nbsp
+<a href="https://junchao-cs.github.io/Junchao_Huang_CV/">My CV</a>&nbsp/&nbsp
+<a href="https://scholar.google.com/citations?htjl=en&user=sBvvg9UAAAAJ">Google Scholar</a>
+&nbsp/&nbsp
+<a href="https://github.com/Junchao-cs">Github</a>
+</p>
+</td>
+<td style="padding:2.5%;width:20%;max-width:20%">
+<a href="images/favicon/Junchao.png"><img style="width:80%;max-width:80%" alt="profile photo"
+src="images/favicon/Junchao.png" class="hoverZoomLink"></a>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
+<heading>News</heading>
+<ul>
+<li> <b>[Sep. 2025]</b> Started my Ph.D. journey at CUHK(Shenzhen)! </li>
+<li> <b>[June 2025]</b> Graduated from Tianjin University with B.Sc. in Mathematics! </li>
+<li> <b>[June 2025]</b> <a href="https://arxiv.org/abs/2506.10507">Edit360</a> accepted to ICCV 2025 (Highlight)!</li>
+<li> <b>[May 2025]</b> <a href="https://arxiv.org/abs/2505.14664">AKRMap</a> accepted to ICML 2025!</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
+<heading>Publications</heading>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;">
+<div class="one">
+<video width="190" autoplay loop muted>
+<source src="images/MemForcing.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+</td>
+<td style="padding:20px;width:70%;vertical-align:top">
+<a href="#memory_forcing_url">
+<papertitle>Memory Forcing: Spatio-Temporal Memory for Consistent Scene Generation on Minecraft</papertitle>
+</a>
+<br>
+<strong>Junchao Huang</strong>, Xinting Hu, Bohan Han, Shaoshuai Shi, Zhuotao Tian, Tianyu He, Li Jiang
+<br>
+<em>Under Review</em>, 2025
+<br>
+<a href="">pdf (coming soon)</a> /
+<a href="https://junchao-cs.github.io/MemoryForcing-demo/">project page</a> /
+<a href="https://github.com/Junchao-cs/MemoryForcing">code (coming soon)</a>
+<p></p>
+<p>
+We introduce Memory Forcing, a training framework that enables video diffusion models to balance exploration and revisit consistency for autoregressive video generation in Minecraft using spatio-temporal memory mechanisms.
+</p>
+</td>
+</tr>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;">
+<div class="one">
+<video width="190" autoplay loop muted>
+<source src="images/Edit360.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+</td>
+<td style="padding:20px;width:70%;vertical-align:top">
+<a href="https://arxiv.org/abs/2506.10507">
+<papertitle>Edit360: 2D Image Edits to 3D Assets from Any Angle</papertitle>
+</a>
+<br>
+<strong>Junchao Huang</strong>, Xinting Hu, Shaoshuai Shi, Zhuotao Tian, Li Jiang
+<br>
+<em>IEEE International Conference on Computer Vision</em> (<strong>ICCV</strong>), 2025
+<br>
+<span style="color: red;"><strong>Highlight (2.3% acceptance rate)</strong></span>
+<br>
+<a href="https://arxiv.org/abs/2506.10507">pdf</a> /
+<a href="https://junchao-cs.github.io/Edit360-demo/">project page</a> /
+<a href="https://github.com/Junchao-cs/Edit360">code (coming soon)</a>
+<p></p>
+<p>
+A tuning-free framework that extends 2D modifications to multi-view consistent 3D editing, enabling user-specific editing from arbitrary viewpoints while ensuring structural coherence across all views.
+</p>
+</td>
+</tr>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;">
+<div class="one">
+<img src='images/AKRMap.png' width="190">
+</div>
+</td>
+<td style="padding:20px;width:70%;vertical-align:top">
+<a href="https://arxiv.org/abs/2505.14664">
+<papertitle>AKRMap: Adaptive Kernel Regression for Trustworthy Visualization of Cross-Modal Embeddings</papertitle>
+</a>
+<br>
+Yilin Ye, <strong>Junchao Huang</strong>, Xingchen Zeng, Jiazhi Xia, Wei Zeng
+<br>
+<em>International Conference on Machine Learning</em> (<strong>ICML</strong>), 2025
+<br>
+<a href="https://arxiv.org/abs/2505.14664">pdf</a> /
+<a href="https://github.com/yilinye/AKRMap">code</a>
+<p></p>
+<p>
+A novel dimensionality reduction technique designed to visualize cross-modal embeddings with enhanced accuracy by learning kernel regression of the metric landscape in the projection space.
+</p>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+<!-- <table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
+<heading>Research Experience</heading>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+
+
+</tbody>
+</table> -->
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
+<heading>Education</heading>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:middle;text-align:center;">
+<img src='images/favicon/cuhk_logo.jpg' width="120" style="margin-right:20px;">
+</td>
+<td style="padding:20px;width:70%;vertical-align:middle;">
+<strong>The Chinese University of Hong Kong (Shenzhen)</strong>
+<br>
+Ph.D. in School of Data Science
+<br>
+September 2025 - Present
+<br>
+Merit Fellowship (Ph.D. Scholarships at CUHK-SZ)
+<br>
+Advisor: Prof. <a href="https://llijiang.github.io/">Li Jiang</a>
+</td>
+</tr>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:middle;text-align:center;">
+<img src='images/favicon/tju_logo.png' width="120" style="margin-right:20px;">
+</td>
+<td style="padding:20px;width:70%;vertical-align:middle;">
+<strong>Tianjin University</strong>
+<br>
+Bachelor of Science: Mathematics and Applied Mathematics
+<br>
+September 2021 - June 2025
+<br>
+Elite Program: "Qiushi" Class of the Mathematics Department
+<br>
+GPA: 3.83/4.00 (91.17/100), Ranking: 3/55
+</td>
+</tr>
+
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
+<heading>Awards & Honors</heading>
+<ul>
+<li>First Class Scholarship (Tianjin University), 2024</li>
+<li>PetroChina Scholarship (Tianjin University), 2022</li>
+<li>Pacemaker to Merit Student (Tianjin University), 2022</li>
+<li>Zhe-Beiyang Scholarship (Tianjin University), 2021</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:middle">
+<heading>Skills</heading>
+<p>
+<strong>Programming:</strong> Python, C++, PyTorch, R, LaTeX, Visual Basic
+</p>
+<p>
+<strong>Software:</strong> PyCharm, Visual Studio Code, Mathematica, MATLAB, MS Office Suite
+</p>
+<p>
+<strong>Languages:</strong> Chinese (Native), English (IELTS 6.5/9, CET-4: 584)
+</p>
+<p>
+<strong>Interests:</strong> Piano (since age 4), Table Tennis, Cycling
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tr>
+<td style="padding:0px">
+<br>
+<p style="text-align:center;font-size:small;">
+Design inspired by <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's website</a>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+</table>
+
+</body>
+
+</html>
