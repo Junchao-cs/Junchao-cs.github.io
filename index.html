@@ -7,6 +7,9 @@
 <meta name="author" content="Junchao Huang">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
 <script type="text/javascript">
 function display(id) {
 var target = document.getElementById(id);
@@ -99,8 +102,12 @@ style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:
 style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 <tbody>
 <tr style="padding:0px">
-<td style="padding:2.5%;width:63%;vertical-align:middle">
-<p style="text-align:center">
+<td style="padding:2.5%;width:33%;max-width:33%;vertical-align:middle;text-align:center;">
+<a href="images/favicon/phd-2025-huang-junchao.jpg"><img style="width:180px;max-width:180px;border-radius:50%;border:3px solid #999;" alt="profile photo"
+src="images/favicon/phd-2025-huang-junchao.jpg" class="hoverZoomLink"></a>
+</td>
+<td style="padding:2.5%;width:67%;vertical-align:middle">
+<p>
 <name>Junchao Huang</name>
 </p>
 <p>
@@ -113,17 +120,30 @@ Before joining CUHK-SZ, I received the B.E. degree from <a href="https://www.tju
 My research interests lie in computer vision and artificial intelligence, with a focus on world models, generative models (video & 3D), and multimodal learning.
 </p>
 
-<p style="text-align:center">
-<a href="mailto:junchaohuang@link.cuhk.edu.cn">Email</a> &nbsp/&nbsp
-<a href="https://junchao-cs.github.io/Junchao_Huang_CV/">My CV</a>&nbsp/&nbsp
-<a href="https://scholar.google.com/citations?htjl=en&user=sBvvg9UAAAAJ">Google Scholar</a>
-&nbsp/&nbsp
-<a href="https://github.com/Junchao-cs">Github</a>
+<p>
+<span style="color: red;">Feel free to contact me for discussion or collaboration!</span>
 </p>
-</td>
-<td style="padding:2.5%;width:20%;max-width:20%">
-<a href="images/favicon/Junchao.png"><img style="width:80%;max-width:80%" alt="profile photo"
-src="images/favicon/Junchao.png" class="hoverZoomLink"></a>
+
+<p style="text-align:left">
+<a href="https://junchao-cs.github.io/Junchao_Huang_CV/">My CV</a> &nbsp;/&nbsp
+<a href="https://scholar.google.com/citations?htjl=en&user=sBvvg9UAAAAJ">Google Scholar</a>
+&nbsp;/&nbsp
+<a href="https://github.com/Junchao-cs">Github</a>
+&nbsp;/&nbsp
+<span style="font-size: 1.1em;">📧</span> <span id="email" style="color: #1772d0;"></span>
+</p>
+<script>
+(function() {
+    var user = "junchaoh.cs";
+    var domain = "gmail";
+    var tld = "com";
+    var emailLink = document.createElement("a");
+    emailLink.href = "mailto:" + user + "@" + domain + "." + tld;
+    emailLink.style.color = "#1772d0";
+    emailLink.textContent = user + " [at] " + domain + " [dot] " + tld;
+    document.getElementById("email").appendChild(emailLink);
+})();
+</script>
 </td>
 </tr>
 </tbody>
@@ -133,9 +153,10 @@ src="images/favicon/Junchao.png" class="hoverZoomLink"></a>
 style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 <tbody>
 <tr>
-<td style="padding:20px;width:100%;vertical-align:middle">
+<td style="padding:20px;width:100%;vertical-align:top">
 <heading>News</heading>
 <ul>
+<li> <b>[Feb. 2026]</b> Our paper <a href="https://junchao-cs.github.io/LIVE-demo/">LIVE</a> is now available on arXiv!</li>
 <li> <b>[Oct. 2025]</b> Our paper <a href="https://arxiv.org/abs/2510.03198">Memory Forcing</a> is now available on arXiv!</li>
 <li> <b>[Oct. 2025]</b> We have released the complete source code for <a href="https://github.com/Junchao-cs/Edit360">Edit360</a>!</li>
 <li> <b>[Sep. 2025]</b> Started my Ph.D. journey at CUHK(Shenzhen)! </li>
@@ -152,7 +173,7 @@ style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-
 style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 <tbody>
 <tr>
-<td style="padding:20px;width:100%;vertical-align:middle">
+<td style="padding:20px;width:100%;vertical-align:top">
 <heading>Publications</heading>
 </td>
 </tr>
@@ -162,6 +183,34 @@ style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-
 <table
 style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 <tbody>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;">
+<div class="one">
+<video width="190" autoplay loop muted>
+<source src="images/LIVE.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+</td>
+<td style="padding:20px;width:70%;vertical-align:top">
+<a href="https://junchao-cs.github.io/LIVE-demo/">
+<papertitle>LIVE: Long-horizon Interactive Video World Modelling</papertitle>
+</a>
+<br>
+<strong>Junchao Huang</strong>, Ziyang Ye, Xinting Hu, Tianyu He, Guiyu Zhang, Shaoshuai Shi, Jiang Bian, Li Jiang
+<br>
+<em>Under Review</em>, 2025
+<br>
+<a href="https://arxiv.org/pdf/2602.03747">pdf</a> /
+<a href="https://junchao-cs.github.io/LIVE-demo/">project page</a> /
+<a href="#">code (coming soon)</a>
+<p></p>
+<p>
+We introduce LIVE, a novel training framework that enforces bounded error accumulation for long-horizon video world modeling. Through a cycle-consistency constraint, LIVE performs forward rollout followed by reverse generation to reconstruct the initial state, enabling efficient autoregressive diffusion training.
+</p>
+</td>
+</tr>
 
 <tr>
 <td style="padding:20px;width:30%;vertical-align:top;">
@@ -221,6 +270,25 @@ A tuning-free framework that extends 2D modifications to multi-view consistent 3
 </td>
 </tr>
 
+</tbody>
+</table>
+
+<br>
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:top">
+<heading>Collaborations</heading>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+
 <tr>
 <td style="padding:20px;width:30%;vertical-align:top;">
 <div class="one">
@@ -252,7 +320,7 @@ A novel dimensionality reduction technique designed to visualize cross-modal emb
 style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 <tbody>
 <tr>
-<td style="padding:20px;width:100%;vertical-align:middle">
+<td style="padding:20px;width:100%;vertical-align:top">
 <heading>Research Experience</heading>
 </td>
 </tr>
@@ -267,11 +335,12 @@ style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-
 </tbody>
 </table> -->
 
+<br>
 <table
 style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 <tbody>
 <tr>
-<td style="padding:20px;width:100%;vertical-align:middle">
+<td style="padding:20px;width:100%;vertical-align:top">
 <heading>Education</heading>
 </td>
 </tr>
@@ -283,10 +352,10 @@ style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-
 <tbody>
 
 <tr>
-<td style="padding:20px;width:30%;vertical-align:middle;text-align:center;">
+<td style="padding:20px;width:30%;vertical-align:top;text-align:center;">
 <img src='images/favicon/cuhk_logo.jpg' width="120" style="margin-right:20px;">
 </td>
-<td style="padding:20px;width:70%;vertical-align:middle;">
+<td style="padding:20px;width:70%;vertical-align:top;">
 <strong>The Chinese University of Hong Kong (Shenzhen)</strong>
 <br>
 Ph.D. in School of Data Science
@@ -300,10 +369,10 @@ Advisor: Prof. <a href="https://llijiang.github.io/">Li Jiang</a>
 </tr>
 
 <tr>
-<td style="padding:20px;width:30%;vertical-align:middle;text-align:center;">
+<td style="padding:20px;width:30%;vertical-align:top;text-align:center;">
 <img src='images/favicon/tju_logo.png' width="120" style="margin-right:20px;">
 </td>
-<td style="padding:20px;width:70%;vertical-align:middle;">
+<td style="padding:20px;width:70%;vertical-align:top;">
 <strong>Tianjin University</strong>
 <br>
 Bachelor of Science: Mathematics and Applied Mathematics
@@ -323,7 +392,40 @@ GPA: 3.83/4.00 (91.17/100), Ranking: 3/55
 style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 <tbody>
 <tr>
-<td style="padding:20px;width:100%;vertical-align:middle">
+<td style="padding:20px;width:100%;vertical-align:top">
+<heading>Research Experience</heading>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;text-align:center;">
+<img src='images/favicon/msra_logo.png' width="120" style="margin-right:20px;">
+</td>
+<td style="padding:20px;width:70%;vertical-align:top;">
+<strong>Microsoft Research Asia (MSRA)</strong>
+<br>
+Research Intern, Machine Learning Group
+<br>
+October 2025 - Present
+<br>
+Mentor: <a href="https://scholar.google.com/citations?user=P08KU1YAAAAJ&hl=zh-CN">Tianyu He</a>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:top">
 <heading>Awards & Honors</heading>
 <ul>
 <li>First Class Scholarship (Tianjin University), 2024</li>
@@ -340,7 +442,7 @@ style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-
 style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 <tbody>
 <tr>
-<td style="padding:20px;width:100%;vertical-align:middle">
+<td style="padding:20px;width:100%;vertical-align:top">
 <heading>Skills</heading>
 <p>
 <strong>Programming:</strong> Python, C++, PyTorch, R, LaTeX, Visual Basic
@@ -363,10 +465,6 @@ style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-
 style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 <tr>
 <td style="padding:0px">
-<br>
-<p style="text-align:center;font-size:small;">
-Design inspired by <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's website</a>
-</p>
 </td>
 </tr>
 </table>
@@ -374,6 +472,16 @@ Design inspired by <a style="font-size:small;" href="https://jonbarron.info">Jon
 </tr>
 
 </table>
+
+<!-- ClustrMaps -->
+<hr style="border: 0; border-top: 1px solid #ccc; margin: 20px auto; max-width: 800px;">
+<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=dnSyVtcl_yqmG0sOPtiMINTdEM63JLcI2WT2FOByw28&cl=ffffff&w=250"></script>
+<hr style="border: 0; border-top: 1px solid #ccc; margin: 20px auto; max-width: 800px;">
+
+
+<p style="text-align:center;font-size:small;">
+Design inspired by <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's website</a>
+</p>
 
 </body>
 
