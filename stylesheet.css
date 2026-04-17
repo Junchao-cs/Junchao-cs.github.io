@@ -142,7 +142,7 @@ ul {
 }
 
 .visitor-stats-summary {
-  margin-top: 12px;
+  margin-bottom: 10px;
 }
 
 .visitor-stats-link {
@@ -154,21 +154,19 @@ ul {
 }
 
 .visitor-stats-label {
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 14px;
   color: #666666;
 }
 
 .visitor-stats-value {
-  font-size: 28px;
+  font-size: 18px;
   line-height: 1;
   font-weight: 700;
   color: #1772d0;
 }
 
 .visitor-stats-meta {
-  font-size: 13px;
+  font-size: 14px;
   color: #777777;
 }
 
