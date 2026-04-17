@@ -134,3 +134,44 @@ ul {
   margin-left: 20px;
   padding-left: 0px;
 }
+
+.visitor-stats {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.visitor-stats-summary {
+  margin-top: 12px;
+}
+
+.visitor-stats-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+}
+
+.visitor-stats-label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666666;
+}
+
+.visitor-stats-value {
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 700;
+  color: #1772d0;
+}
+
+.visitor-stats-meta {
+  font-size: 13px;
+  color: #777777;
+}
+
+.visitor-stats-link:hover .visitor-stats-value {
+  color: #f09228;
+}

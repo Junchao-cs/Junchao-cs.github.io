@@ -500,7 +500,38 @@ style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-
 
 <!-- ClustrMaps -->
 <hr style="border: 0; border-top: 1px solid #ccc; margin: 20px auto; max-width: 800px;">
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=dnSyVtcl_yqmG0sOPtiMINTdEM63JLcI2WT2FOByw28&cl=ffffff&w=250"></script>
+<div class="visitor-stats">
+  <script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=dnSyVtcl_yqmG0sOPtiMINTdEM63JLcI2WT2FOByw28&cl=ffffff&w=250&t=n"></script>
+  <div class="visitor-stats-summary">
+    <a class="visitor-stats-link" id="clustrmaps-total-link" href="https://clustrmaps.com/site/1c96n">
+      <span class="visitor-stats-label">Total Pageviews</span>
+      <span class="visitor-stats-value" id="clustrmaps-total-pageviews">644</span>
+      <span class="visitor-stats-meta" id="clustrmaps-total-since">Since Feb 4th 2026</span>
+    </a>
+  </div>
+</div>
+<script>
+  fetch('data/clustrmaps-stats.json', {cache: 'no-store'})
+    .then(function(response) {
+      if (!response.ok) {
+        throw new Error('Failed to load ClustrMaps stats.');
+      }
+      return response.json();
+    })
+    .then(function(stats) {
+      if (typeof stats.totalPageviews !== 'undefined') {
+        document.getElementById('clustrmaps-total-pageviews').textContent =
+          Number(stats.totalPageviews).toLocaleString();
+      }
+      if (stats.since) {
+        document.getElementById('clustrmaps-total-since').textContent = 'Since ' + stats.since;
+      }
+      if (stats.profileUrl) {
+        document.getElementById('clustrmaps-total-link').href = stats.profileUrl;
+      }
+    })
+    .catch(function() {});
+</script>
 <hr style="border: 0; border-top: 1px solid #ccc; margin: 20px auto; max-width: 800px;">
 
 
