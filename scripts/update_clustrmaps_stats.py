@@ -5,6 +5,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import re
+import subprocess
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -13,22 +14,57 @@ PROFILE_URL = "https://clustrmaps.com/site/1c96n"
 ROOT_PATH = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT_PATH / "data" / "clustrmaps-stats.json"
 INDEX_PATH = ROOT_PATH / "index.html"
+USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/135.0.0.0 Safari/537.36"
+)
 
 
-def fetch_text(url: str) -> str:
+def fetch_text_with_curl(url: str) -> str:
+    result = subprocess.run(
+        [
+            "curl",
+            "--fail",
+            "--location",
+            "--silent",
+            "--show-error",
+            "--max-time",
+            "30",
+            "--retry",
+            "3",
+            "--retry-delay",
+            "5",
+            "--user-agent",
+            USER_AGENT,
+            "--header",
+            "Accept-Language: en-US,en;q=0.9",
+            url,
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return result.stdout
+
+
+def fetch_text_with_urllib(url: str) -> str:
     request = Request(
         url,
         headers={
-            "User-Agent": (
-                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/135.0.0.0 Safari/537.36"
-            ),
+            "User-Agent": USER_AGENT,
             "Accept-Language": "en-US,en;q=0.9",
         },
     )
     with urlopen(request, timeout=30) as response:
         return response.read().decode("utf-8", "ignore")
+
+
+def fetch_text(url: str) -> str:
+    try:
+        return fetch_text_with_curl(url)
+    except (OSError, subprocess.CalledProcessError):
+        return fetch_text_with_urllib(url)
 
 
 def extract(pattern: str, text: str, field_name: str) -> str:

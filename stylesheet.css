@@ -143,6 +143,8 @@ ul {
 
 .visitor-stats-summary {
   margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
 }
 
 .visitor-stats-link {
@@ -151,6 +153,8 @@ ul {
   align-items: center;
   gap: 4px;
   color: inherit;
+  position: relative;
+  z-index: 2;
 }
 
 .visitor-stats-label {
