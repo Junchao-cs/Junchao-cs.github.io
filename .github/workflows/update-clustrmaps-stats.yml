@@ -2,6 +2,12 @@ name: Update ClustrMaps Stats
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/update-clustrmaps-stats.yml"
+      - "scripts/update_clustrmaps_stats.py"
   schedule:
     - cron: "17 3 * * *"
 
