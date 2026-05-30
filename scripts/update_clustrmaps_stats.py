@@ -6,7 +6,9 @@ import datetime as dt
 import json
 import re
 import subprocess
+import sys
 from pathlib import Path
+from urllib.error import URLError
 from urllib.request import Request, urlopen
 
 
@@ -22,6 +24,7 @@ USER_AGENT = (
 
 
 def fetch_text_with_curl(url: str) -> str:
+    print(f"Fetching ClustrMaps with curl: {url}", file=sys.stderr)
     result = subprocess.run(
         [
             "curl",
@@ -49,6 +52,7 @@ def fetch_text_with_curl(url: str) -> str:
 
 
 def fetch_text_with_urllib(url: str) -> str:
+    print(f"Fetching ClustrMaps with urllib: {url}", file=sys.stderr)
     request = Request(
         url,
         headers={
@@ -63,8 +67,19 @@ def fetch_text_with_urllib(url: str) -> str:
 def fetch_text(url: str) -> str:
     try:
         return fetch_text_with_curl(url)
-    except (OSError, subprocess.CalledProcessError):
-        return fetch_text_with_urllib(url)
+    except (OSError, subprocess.CalledProcessError) as error:
+        print(f"curl fetch failed: {error}", file=sys.stderr)
+        if isinstance(error, subprocess.CalledProcessError):
+            stderr = (error.stderr or "").strip()
+            if stderr:
+                print(stderr, file=sys.stderr)
+        try:
+            return fetch_text_with_urllib(url)
+        except (OSError, URLError) as urllib_error:
+            raise RuntimeError(
+                "Could not fetch ClustrMaps stats from "
+                f"{url}. ClustrMaps may be unreachable from this runner."
+            ) from urllib_error
 
 
 def extract(pattern: str, text: str, field_name: str) -> str:

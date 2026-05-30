@@ -138,13 +138,14 @@ ul {
 .visitor-stats {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
   text-align: center;
 }
 
 .visitor-stats-summary {
   margin-bottom: 10px;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
 .visitor-stats-link {
@@ -154,7 +155,12 @@ ul {
   gap: 4px;
   color: inherit;
   position: relative;
-  z-index: 2;
+  z-index: 10;
+}
+
+.clustrmaps-widget {
+  position: relative;
+  z-index: 1;
 }
 
 .visitor-stats-label {
