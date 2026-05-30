@@ -13,6 +13,11 @@ from urllib.request import Request, urlopen
 
 
 PROFILE_URL = "https://clustrmaps.com/site/1c96n"
+PROFILE_FETCH_URLS = [
+    PROFILE_URL,
+    "https://www.clustrmaps.com/site/1c96n",
+    "http://clustrmaps.com/site/1c96n",
+]
 ROOT_PATH = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT_PATH / "data" / "clustrmaps-stats.json"
 INDEX_PATH = ROOT_PATH / "index.html"
@@ -29,6 +34,9 @@ def fetch_text_with_curl(url: str) -> str:
         [
             "curl",
             "--fail",
+            "--ipv4",
+            "--http1.1",
+            "--tlsv1.2",
             "--location",
             "--silent",
             "--show-error",
@@ -89,6 +97,43 @@ def extract(pattern: str, text: str, field_name: str) -> str:
     return match.group(1).strip()
 
 
+def parse_stats(html: str, source_url: str) -> tuple[int, int, str]:
+    total_pageviews = int(
+        extract(
+            r'class="pvTV total-pageviews odometer" data-value="(\d+)"',
+            html,
+            f"total pageviews from {source_url}",
+        )
+    )
+    total_visits = int(
+        extract(
+            r'<strong data-count="(\d+)">\d+</strong>\s*total visits for:',
+            html,
+            f"total visits from {source_url}",
+        )
+    )
+    since = extract(
+        r'class="text-nowrap pvTT">Since ([^<]+)</span>',
+        html,
+        f"start date from {source_url}",
+    )
+    return total_pageviews, total_visits, since
+
+
+def fetch_and_parse_stats() -> tuple[int, int, str]:
+    errors = []
+    for source_url in PROFILE_FETCH_URLS:
+        try:
+            return parse_stats(fetch_text(source_url), source_url)
+        except Exception as error:
+            errors.append(f"{source_url}: {error}")
+            print(f"Failed to read ClustrMaps stats from {source_url}: {error}", file=sys.stderr)
+    raise RuntimeError(
+        "Could not read ClustrMaps stats from any known endpoint:\n"
+        + "\n".join(errors)
+    )
+
+
 def replace_first(pattern: str, replacement: str, text: str, field_name: str) -> str:
     updated, count = re.subn(pattern, replacement, text, count=1)
     if count != 1:
@@ -114,27 +159,7 @@ def update_index_fallback(total_pageviews: int, since: str) -> None:
 
 
 def main() -> None:
-    html = fetch_text(PROFILE_URL)
-
-    total_pageviews = int(
-        extract(
-            r'class="pvTV total-pageviews odometer" data-value="(\d+)"',
-            html,
-            "total pageviews",
-        )
-    )
-    total_visits = int(
-        extract(
-            r'<strong data-count="(\d+)">\d+</strong>\s*total visits for:',
-            html,
-            "total visits",
-        )
-    )
-    since = extract(
-        r'class="text-nowrap pvTT">Since ([^<]+)</span>',
-        html,
-        "start date",
-    )
+    total_pageviews, total_visits, since = fetch_and_parse_stats()
 
     payload = {
         "profileUrl": PROFILE_URL,
