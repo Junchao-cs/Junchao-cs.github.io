@@ -158,11 +158,6 @@ ul {
   z-index: 10;
 }
 
-.clustrmaps-widget {
-  position: relative;
-  z-index: 1;
-}
-
 .visitor-stats-label {
   font-size: 14px;
   color: #666666;

@@ -516,42 +516,48 @@ style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-
 
 </table>
 
-<!-- ClustrMaps -->
+<!-- GoatCounter -->
 <hr style="border: 0; border-top: 1px solid #ccc; margin: 20px auto; max-width: 800px;">
 <div class="visitor-stats">
   <div class="visitor-stats-summary">
-    <a class="visitor-stats-link" id="clustrmaps-total-link" href="https://clustrmaps.com/site/1c96n" target="_blank" rel="noopener noreferrer">
+    <a class="visitor-stats-link" id="goatcounter-total-link" href="https://junchao.goatcounter.com/" target="_blank" rel="noopener noreferrer">
       <span class="visitor-stats-label">Total Pageviews</span>
-      <span class="visitor-stats-value" id="clustrmaps-total-pageviews">933</span>
-      <span class="visitor-stats-meta" id="clustrmaps-total-since">Since Feb 4th 2026</span>
+      <span class="visitor-stats-value" id="goatcounter-total-pageviews">933</span>
+      <span class="visitor-stats-meta" id="goatcounter-total-since">Since Feb 4th 2026</span>
     </a>
-  </div>
-  <div class="clustrmaps-widget">
-    <script async type="text/javascript" id="clustrmaps" src="https://cdn.clustrmaps.com/map_v2.js?d=dnSyVtcl_yqmG0sOPtiMINTdEM63JLcI2WT2FOByw28&cl=ffffff&w=250&t=n"></script>
   </div>
 </div>
 <script>
-  fetch('data/clustrmaps-stats.json', {cache: 'no-store'})
-    .then(function(response) {
-      if (!response.ok) {
-        throw new Error('Failed to load ClustrMaps stats.');
-      }
-      return response.json();
-    })
-    .then(function(stats) {
-      if (typeof stats.totalPageviews !== 'undefined') {
-        document.getElementById('clustrmaps-total-pageviews').textContent =
-          Number(stats.totalPageviews).toLocaleString();
-      }
-      if (stats.since) {
-        document.getElementById('clustrmaps-total-since').textContent = 'Since ' + stats.since;
-      }
-      if (stats.profileUrl) {
-        document.getElementById('clustrmaps-total-link').href = stats.profileUrl;
-      }
-    })
-    .catch(function() {});
+  (function() {
+    var goatcounterCode = 'junchao';
+    var clustrmapsBaseline = 933;
+    var goatcounterBaseUrl = 'https://' + goatcounterCode + '.goatcounter.com';
+
+    window.goatcounter = window.goatcounter || {};
+    window.goatcounter.endpoint = goatcounterBaseUrl + '/count';
+
+    fetch(goatcounterBaseUrl + '/counter/TOTAL.json', {cache: 'no-store'})
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error('Failed to load GoatCounter stats.');
+        }
+        return response.json();
+      })
+      .then(function(stats) {
+        var goatcounterTotal = Number(String(stats.count || stats.count_unique || '0').replace(/[^\d]/g, ''));
+        if (Number.isFinite(goatcounterTotal)) {
+          document.getElementById('goatcounter-total-pageviews').textContent =
+            (clustrmapsBaseline + goatcounterTotal).toLocaleString();
+        }
+        document.getElementById('goatcounter-total-link').href = goatcounterBaseUrl;
+      })
+      .catch(function() {
+        document.getElementById('goatcounter-total-pageviews').textContent =
+          clustrmapsBaseline.toLocaleString();
+      });
+  })();
 </script>
+<script data-goatcounter="https://junchao.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <hr style="border: 0; border-top: 1px solid #ccc; margin: 20px auto; max-width: 800px;">
 
 
