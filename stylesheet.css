@@ -148,6 +148,52 @@ ul {
   letter-spacing: 0;
 }
 
+.talk-entry {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-left: 3px solid #1772d0;
+  background: linear-gradient(90deg, rgba(23, 114, 208, 0.08), rgba(23, 114, 208, 0.02));
+  border-radius: 6px;
+}
+
+.talk-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.talk-date {
+  flex: 0 0 auto;
+  color: #666666;
+  font-size: 14px;
+}
+
+.talk-meta {
+  margin-top: 6px;
+  color: #555555;
+}
+
+.talk-language {
+  color: #777777;
+}
+
+.talk-separator {
+  margin: 0 6px;
+  color: #999999;
+}
+
+@media (max-width: 560px) {
+  .talk-title-row {
+    display: block;
+  }
+
+  .talk-date {
+    display: block;
+    margin-top: 4px;
+  }
+}
+
 .visitor-stats {
   max-width: 800px;
   margin: 0 auto;
