@@ -1,0 +1,709 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Junchao Huang</title>
+<meta name="author" content="Junchao Huang">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+<script type="text/javascript">
+function display(id) {
+var target = document.getElementById(id);
+if (target.style.display == "none") {
+target.style.display = "";
+} else {
+target.style.display = "none";
+}
+}
+</script>
+<style>
+/* CSS styles inline for completeness */
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
+
+body,
+td,
+th,
+tr,
+p,
+a {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px
+}
+
+strong {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+heading {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+papertitle {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700
+}
+
+name {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 32px;
+}
+
+.one {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.two {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+.fade {
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+span.highlight {
+  background-color: #ffffd0;
+}
+</style>
+</head>
+
+<body>
+<table
+style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr style="padding:0px">
+<td style="padding:0px">
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr style="padding:0px">
+<td style="padding:2.5%;width:33%;max-width:33%;vertical-align:middle;text-align:center;">
+<a href="images/favicon/cuhk_junchao.PNG" style="display:inline-block;width:180px;height:180px;border-radius:50%;border:3px solid #999;overflow:hidden;">
+<img style="display:block;width:112%;height:112%;object-fit:cover;object-position:center;transform:translateX(-5.5%);" alt="profile photo"
+src="images/favicon/cuhk_junchao.PNG" class="hoverZoomLink"></a>
+</td>
+<td style="padding:2.5%;width:67%;vertical-align:middle">
+<p>
+<name>Junchao Huang</name>
+</p>
+<p>
+I am a Ph.D. student in the School of Data Science, <a href="https://www.cuhk.edu.cn/en">The Chinese University of Hong Kong, Shenzhen (CUHK-SZ)</a>, supervised by Prof. <a href="https://llijiang.github.io/">Li Jiang</a>.
+
+Before joining CUHK-SZ, I received the B.E. degree from <a href="https://www.tju.edu.cn/">Tianjin University (TJU)</a> in 2025.
+</p>
+
+<p>
+My research interests lie in computer vision and artificial intelligence, with a focus on world models, generative models (video & 3D), and multimodal learning.
+</p>
+
+<p>
+<span style="color: red;">Feel free to contact me for discussion or collaboration!</span>
+</p>
+
+<p style="text-align:left">
+<!-- <a href="data/cv.pdf">My CV</a> &nbsp;/&nbsp -->
+<a href="https://scholar.google.com/citations?htjl=en&user=sBvvg9UAAAAJ">Google Scholar</a>
+&nbsp;/&nbsp
+<a href="https://github.com/Junchao-cs">Github</a>
+&nbsp;/&nbsp
+<span style="font-size: 1.1em;">📧</span> <span id="email" style="color: #1772d0;"></span>
+</p>
+<script>
+(function() {
+    var user = "junchaoh.cs";
+    var domain = "gmail";
+    var tld = "com";
+    var emailLink = document.createElement("a");
+    emailLink.href = "mailto:" + user + "@" + domain + "." + tld;
+    emailLink.style.color = "#1772d0";
+    emailLink.textContent = user + " [at] " + domain + " [dot] " + tld;
+    document.getElementById("email").appendChild(emailLink);
+})();
+</script>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:top">
+<heading>News</heading>
+<ul>
+<li> <b>[Sep. 2026]</b> Our technical report <a href="https://arxiv.org/abs/2609.02886">SolarWM</a> is now available on arXiv, with <a href="https://github.com/Junchao-cs/SolarWM">code</a> and <a href="https://huggingface.co/datasets/junchaoh-cs/SolarWM-Data">data</a> released!</li>
+<li> <b>[July. 2026]</b> Our paper <a href="https://arxiv.org/abs/2607.14088">VideoRAE</a> is now available on arXiv, with <a href="https://github.com/zhxie0117/VideoRAE">code</a> released!</li>
+<li> <b>[July. 2026]</b> We have released the complete source code for <a href="https://github.com/Junchao-cs/LIVE">LIVE</a>!</li>
+<li> <b>[June 2026]</b> Gave a <a href="https://www.techbeat.net/talk-info?id=1056">TechBeat talk</a> on <a href="https://junchao-cs.github.io/LIVE-demo/">LIVE</a> (Chinese).</li>
+<li> <b>[Apr. 2026]</b> <a href="https://junchao-cs.github.io/LIVE-demo/">LIVE</a> accepted to ICML 2026!</li>
+<li> <b>[Apr. 2026]</b> <a href="https://grenoble-zhang.github.io/SymphoMotion/">SymphoMotion</a> accepted to CVPR 2026!</li>
+<li> <b>[Feb. 2026]</b> Our paper <a href="https://junchao-cs.github.io/LIVE-demo/">LIVE</a> is now available on arXiv!</li>
+<li> <b>[Oct. 2025]</b> Our paper <a href="https://arxiv.org/abs/2510.03198">Memory Forcing</a> is now available on arXiv!</li>
+<li> <b>[Oct. 2025]</b> We have released the complete source code for <a href="https://github.com/Junchao-cs/Edit360">Edit360</a>!</li>
+<li> <b>[Sep. 2025]</b> Started my Ph.D. journey at CUHK(Shenzhen)! </li>
+<li> <b>[June 2025]</b> Graduated from Tianjin University with B.Sc. in Mathematics! </li>
+<li> <b>[June 2025]</b> <a href="https://arxiv.org/abs/2506.10507">Edit360</a> accepted to ICCV 2025 (Highlight)!</li>
+<li> <b>[May 2025]</b> <a href="https://arxiv.org/abs/2505.14664">AKRMap</a> accepted to ICML 2025!</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:top">
+<heading>Technical Reports</heading>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;">
+<div class="one">
+<img src='images/SolarWM.png' width="190" style="height:160px;object-fit:cover;object-position:center;border-radius:4px;">
+</div>
+</td>
+<td style="padding:20px;width:70%;vertical-align:top">
+<a href="https://junchao-cs.github.io/SolarWM-Web/">
+<papertitle>SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models</papertitle>
+</a>
+<br>
+<strong>Junchao Huang</strong>, Guian Fang, Shengju Qian, Xianghao Kong, Zhuoran Zhao, Wei Huang, Yihua Du, Zixin Zhang, Justin Cui, Yuchao Gu, Yukang Chen, Xinting Hu, Tianyu He, Shaoshuai Shi, Zhuotao Tian, Xin Wang, Mike Zheng Shou, Li Jiang
+<br>
+<em>Technical Report</em>, 2026
+<br>
+<a href="https://arxiv.org/pdf/2609.02886">pdf</a> /
+<a href="https://junchao-cs.github.io/SolarWM-Web/">project page</a> /
+<a href="https://github.com/Junchao-cs/SolarWM">code</a> /
+<a href="https://huggingface.co/datasets/junchaoh-cs/SolarWM-Data">data</a>
+<p></p>
+<p>
+We introduce SolarWM, a fully open foundation for interactive video world models that unifies 1.43 million clips, scalable backbone-native training, and real-time long-horizon interaction within one reproducible framework.
+</p>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:top">
+<heading>Publications</heading>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;">
+<div class="one">
+<video width="190" autoplay loop muted>
+<source src="images/LIVE.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+</td>
+<td style="padding:20px;width:70%;vertical-align:top">
+<a href="https://junchao-cs.github.io/LIVE-demo/">
+<papertitle>LIVE: Long-horizon Interactive Video World Modelling</papertitle>
+</a>
+<br>
+<strong>Junchao Huang</strong>, Ziyang Ye, Xinting Hu, Tianyu He, Guiyu Zhang, Shaoshuai Shi, Jiang Bian, Li Jiang
+<br>
+<em>International Conference on Machine Learning</em> (<strong>ICML</strong>), 2026
+<br>
+<a href="https://arxiv.org/pdf/2602.03747">pdf</a> /
+<a href="https://junchao-cs.github.io/LIVE-demo/">project page</a> /
+<a href="https://github.com/Junchao-cs/LIVE">code</a>
+<p></p>
+<p>
+We introduce LIVE, a novel training framework that enforces bounded error accumulation for long-horizon video world modeling. Through a cycle-consistency constraint, LIVE performs forward rollout followed by reverse generation to reconstruct the initial state, enabling efficient autoregressive diffusion training.
+</p>
+</td>
+</tr>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;">
+<div class="one">
+<video width="190" autoplay loop muted>
+<source src="images/MemForcing.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+</td>
+<td style="padding:20px;width:70%;vertical-align:top">
+<a href="#memory_forcing_url">
+<papertitle>Memory Forcing: Spatio-Temporal Memory for Consistent Scene Generation on Minecraft</papertitle>
+</a>
+<br>
+<strong>Junchao Huang</strong>, Xinting Hu, Bohan Han, Shaoshuai Shi, Zhuotao Tian, Tianyu He, Li Jiang
+<br>
+<em>Under Review</em>, 2025
+<br>
+<a href="https://arxiv.org/pdf/2510.03198">pdf</a> /
+<a href="https://junchao-cs.github.io/MemoryForcing-demo/">project page</a> /
+<a href="https://github.com/Junchao-cs/MemoryForcing">code (coming soon)</a>
+<p></p>
+<p>
+We introduce Memory Forcing, a training framework that enables video diffusion models to balance exploration and revisit consistency for autoregressive video generation in Minecraft using spatio-temporal memory mechanisms.
+</p>
+</td>
+</tr>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;">
+<div class="one">
+<video width="190" autoplay loop muted>
+<source src="images/Edit360.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+</td>
+<td style="padding:20px;width:70%;vertical-align:top">
+<a href="https://arxiv.org/abs/2506.10507">
+<papertitle>Edit360: 2D Image Edits to 3D Assets from Any Angle</papertitle>
+</a>
+<br>
+<strong>Junchao Huang</strong>, Xinting Hu, Shaoshuai Shi, Zhuotao Tian, Li Jiang
+<br>
+<em>IEEE International Conference on Computer Vision</em> (<strong>ICCV</strong>), 2025
+<br>
+<span style="color: red;"><strong>Highlight (2.3% acceptance rate)</strong></span>
+<br>
+<a href="https://arxiv.org/abs/2506.10507">pdf</a> /
+<a href="https://junchao-cs.github.io/Edit360-demo/">project page</a> /
+<a href="https://github.com/Junchao-cs/Edit360">code</a>
+<p></p>
+<p>
+A tuning-free framework that extends 2D modifications to multi-view consistent 3D editing, enabling user-specific editing from arbitrary viewpoints while ensuring structural coherence across all views.
+</p>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+<br>
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:top">
+<heading>Collaborations</heading>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;">
+<div class="one">
+<img src='images/VideoRAE.png' width="190" style="height:160px;object-fit:cover;object-position:center;border-radius:4px;">
+</div>
+</td>
+<td style="padding:20px;width:70%;vertical-align:top">
+<a href="https://arxiv.org/abs/2607.14088">
+<papertitle>VideoRAE: Taming Video Foundation Models for Generative Modeling via Representation Autoencoders</papertitle>
+</a>
+<br>
+Zhihao Xie, Junfeng Wu, Xinting Hu, <strong>Junchao Huang</strong>, Li Jiang
+<br>
+<em>Preprint</em>, 2026
+<br>
+<a href="https://arxiv.org/pdf/2607.14088">pdf</a> /
+<a href="https://zhxie0117.github.io/VideoRAE/">project page</a> /
+<a href="https://github.com/zhxie0117/VideoRAE">code</a>
+<p></p>
+<p>
+A representation autoencoder that turns frozen video foundation model features into compact continuous and discrete latents, enabling strong reconstruction and approximately 5x faster convergence for downstream autoregressive and diffusion video generators.
+</p>
+</td>
+</tr>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;">
+<div class="one">
+<img src='images/SymphoMotion.png' width="190" style="height:160px;object-fit:cover;object-position:center;border-radius:4px;">
+</div>
+</td>
+<td style="padding:20px;width:70%;vertical-align:top">
+<a href="https://arxiv.org/abs/2604.03723">
+<papertitle>SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation</papertitle>
+</a>
+<br>
+Guiyu Zhang, Yabo Chen, Xunzhi Xiang, <strong>Junchao Huang</strong>, Zhongyu Wang, Li Jiang
+<br>
+<em>IEEE/CVF Conference on Computer Vision and Pattern Recognition</em> (<strong>CVPR</strong>), 2026
+<br>
+<a href="https://arxiv.org/pdf/2604.03723">pdf</a> /
+<a href="https://grenoble-zhang.github.io/SymphoMotion/">project page</a> /
+<a href="https://github.com/grenoble-zhang/SymphoMotion">code</a>
+<p></p>
+<p>
+A unified motion-control framework that jointly models camera trajectories and object dynamics for coherent video generation, supported by geometry-aware control and the new RealCOD-25K dataset.
+</p>
+</td>
+</tr>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;">
+<div class="one">
+<img src='images/AKRMap.png' width="190">
+</div>
+</td>
+<td style="padding:20px;width:70%;vertical-align:top">
+<a href="https://arxiv.org/abs/2505.14664">
+<papertitle>AKRMap: Adaptive Kernel Regression for Trustworthy Visualization of Cross-Modal Embeddings</papertitle>
+</a>
+<br>
+Yilin Ye, <strong>Junchao Huang</strong>, Xingchen Zeng, Jiazhi Xia, Wei Zeng
+<br>
+<em>International Conference on Machine Learning</em> (<strong>ICML</strong>), 2025
+<br>
+<a href="https://arxiv.org/abs/2505.14664">pdf</a> /
+<a href="https://github.com/yilinye/AKRMap">code</a>
+<p></p>
+<p>
+A novel dimensionality reduction technique designed to visualize cross-modal embeddings with enhanced accuracy by learning kernel regression of the metric landscape in the projection space.
+</p>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+<!-- <table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:top">
+<heading>Research Experience</heading>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+
+
+</tbody>
+</table> -->
+
+<br>
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:top">
+<heading>Education</heading>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;text-align:center;">
+<img src='images/favicon/cuhk_logo.jpg' width="120" style="margin-right:20px;">
+</td>
+<td style="padding:20px;width:70%;vertical-align:top;">
+<strong>The Chinese University of Hong Kong (Shenzhen)</strong>
+<br>
+Ph.D. in School of Data Science
+<br>
+September 2025 - Present
+<br>
+Merit Fellowship (Ph.D. Scholarships at CUHK-SZ)
+<br>
+Advisor: Prof. <a href="https://llijiang.github.io/">Li Jiang</a>
+</td>
+</tr>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;text-align:center;">
+<img src='images/favicon/tju_logo.png' width="120" style="margin-right:20px;">
+</td>
+<td style="padding:20px;width:70%;vertical-align:top;">
+<strong>Tianjin University</strong>
+<br>
+Bachelor of Science: Mathematics and Applied Mathematics
+<br>
+September 2021 - June 2025
+<br>
+Elite Program: "Qiushi" Class of the Mathematics Department
+<br>
+GPA: 3.83/4.00 (91.17/100), Ranking: 3/55
+</td>
+</tr>
+
+</tbody>
+</table>
+
+<!-- Research Experience temporarily hidden
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:top">
+<heading>Research Experience</heading>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;text-align:center;">
+<img src='images/favicon/tencent_logo.png' width="120" style="margin-right:20px;margin-top:14px;">
+</td>
+<td style="padding:20px;width:70%;vertical-align:top;">
+<strong><a href="https://www.tencent.com/en-us/">Tencent, Shenzhen, China</a></strong>
+<br>
+Intern (青云计划), Video World Models
+<br>
+July 2026 - Present
+<br>
+Mentor: Shengju Qian
+</td>
+</tr>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;text-align:center;">
+<div class="research-logo-placeholder">XYZLab</div>
+</td>
+<td style="padding:20px;width:70%;vertical-align:top;">
+<strong><a href="https://junchao-cs.github.io/">XYZLab, Shanghai, China</a></strong>
+<br>
+Intern, Vision-Language Foundation Models
+<br>
+March 2026 - June 2026
+<br>
+Mentor: Tianyu He
+</td>
+</tr>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;text-align:center;">
+<img src='images/favicon/msra_logo.png' width="120" style="margin-right:20px;margin-top:18px;">
+</td>
+<td style="padding:20px;width:70%;vertical-align:top;">
+<strong><a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/">Microsoft Research Asia (MSRA)</a></strong>
+<br>
+Research Intern, Machine Learning Group
+<br>
+October 2025 - March 2026
+<br>
+Mentor: Tianyu He
+</td>
+</tr>
+
+<tr>
+<td style="padding:20px;width:30%;vertical-align:top;text-align:center;">
+<img src='images/favicon/didi.webp' width="120" style="margin-right:20px;">
+</td>
+<td style="padding:20px;width:70%;vertical-align:top;">
+<strong><a href="https://web.didiglobal.com/">Didi, Guangzhou, China</a></strong>
+<br>
+Research Intern, AI Research
+<br>
+December 2024 - October 2025
+<br>
+Mentor: Shaoshuai Shi
+</td>
+</tr>
+
+</tbody>
+</table>
+-->
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:top">
+<heading>Talk</heading>
+<div class="talk-entry">
+<div class="talk-title-row">
+<papertitle>LIVE: Long-horizon Interactive Video World Modeling</papertitle>
+<span class="talk-date">June 24, 2026</span>
+</div>
+<div class="talk-meta">
+<span>TechBeat Talk</span>
+<span class="talk-language">(Chinese)</span>
+<span class="talk-separator">/</span>
+<a href="https://www.techbeat.net/talk-info?id=1056">link</a>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:top">
+<heading>Awards & Honors</heading>
+<ul>
+<li>First Class Scholarship (Tianjin University), 2024</li>
+<li>PetroChina Scholarship (Tianjin University), 2022</li>
+<li>Pacemaker to Merit Student (Tianjin University), 2022</li>
+<li>Zhe-Beiyang Scholarship (Tianjin University), 2021</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tbody>
+<tr>
+<td style="padding:20px;width:100%;vertical-align:top">
+<heading>Skills</heading>
+<p>
+<strong>Programming:</strong> Python, C++, PyTorch, R, LaTeX, Visual Basic
+</p>
+<p>
+<strong>Software:</strong> PyCharm, Visual Studio Code, Mathematica, MATLAB, MS Office Suite
+</p>
+<p>
+<strong>Languages:</strong> Chinese (Native), English (IELTS 6.5/9, CET-4: 584)
+</p>
+<p>
+<strong>Interests:</strong> Piano (since age 4), Table Tennis, Cycling
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table
+style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<tr>
+<td style="padding:0px">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+</table>
+
+<!-- GoatCounter -->
+<hr style="border: 0; border-top: 1px solid #ccc; margin: 20px auto; max-width: 800px;">
+<div class="visitor-stats">
+  <div class="visitor-stats-summary">
+    <a class="visitor-stats-link" id="goatcounter-total-link" href="https://junchao.goatcounter.com/" target="_blank" rel="noopener noreferrer">
+      <span class="visitor-stats-label">Total Pageviews</span>
+      <span class="visitor-stats-value" id="goatcounter-total-pageviews">933</span>
+      <span class="visitor-stats-meta" id="goatcounter-total-since">Since Feb 4th 2026</span>
+    </a>
+  </div>
+</div>
+<script>
+  (function() {
+    var goatcounterCode = 'junchao';
+    var clustrmapsBaseline = 933;
+    var goatcounterMigrationTotal = 1;
+    var goatcounterBaseUrl = 'https://' + goatcounterCode + '.goatcounter.com';
+    var shouldTrackGoatCounter = location.hostname === 'junchao-cs.github.io';
+
+    window.goatcounter = window.goatcounter || {};
+    window.goatcounter.endpoint = goatcounterBaseUrl + '/count';
+
+    fetch(goatcounterBaseUrl + '/counter/TOTAL.json', {cache: 'no-store'})
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error('Failed to load GoatCounter stats.');
+        }
+        return response.json();
+      })
+      .then(function(stats) {
+        var goatcounterTotal = Number(String(stats.count || stats.count_unique || '0').replace(/[^\d]/g, ''));
+        if (Number.isFinite(goatcounterTotal)) {
+          var goatcounterNewViews = Math.max(0, goatcounterTotal - goatcounterMigrationTotal);
+          document.getElementById('goatcounter-total-pageviews').textContent =
+            (clustrmapsBaseline + goatcounterNewViews).toLocaleString();
+        }
+        document.getElementById('goatcounter-total-link').href = goatcounterBaseUrl;
+      })
+      .catch(function() {
+        document.getElementById('goatcounter-total-pageviews').textContent =
+          clustrmapsBaseline.toLocaleString();
+      });
+
+    if (shouldTrackGoatCounter) {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://gc.zgo.at/count.js';
+      script.setAttribute('data-goatcounter', goatcounterBaseUrl + '/count');
+      document.head.appendChild(script);
+    }
+  })();
+</script>
+<hr style="border: 0; border-top: 1px solid #ccc; margin: 20px auto; max-width: 800px;">
+
+
+<p style="text-align:center;font-size:small;">
+Design inspired by <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's website</a>
+</p>
+
+</body>
+
+</html>
