@@ -2,6 +2,8 @@
   'use strict';
 
   var metricLabels = {
+    'solarrenderer-github-metric': 'GitHub stars',
+    'solarrenderer-huggingface-metric': 'Hugging Face downloads (weights + data)',
     'solarwm-github-metric': 'GitHub stars',
     'solarwm-huggingface-metric': 'Hugging Face downloads',
     'solarwm-modelscope-metric': 'ModelScope downloads'
@@ -43,9 +45,9 @@
     return response.json();
   }
 
-  async function fetchGitHubStars() {
+  async function fetchGitHubStars(repositoryId) {
     try {
-      var repository = await fetchJson('https://api.github.com/repos/Junchao-cs/SolarWM');
+      var repository = await fetchJson('https://api.github.com/repos/' + repositoryId);
       if (Number.isSafeInteger(repository.stargazers_count)) {
         return repository.stargazers_count;
       }
@@ -53,7 +55,7 @@
       // Fall through to Shields when GitHub's anonymous API quota is exhausted.
     }
 
-    var shield = await fetchJson('https://img.shields.io/github/stars/Junchao-cs/SolarWM.json');
+    var shield = await fetchJson('https://img.shields.io/github/stars/' + repositoryId + '.json');
     var compactValue = String(shield.value || shield.message || '').trim();
     var match = compactValue.match(/^([\d.]+)([kKmM]?)$/);
     if (!match) {
@@ -65,7 +67,31 @@
     return Math.round(Number(match[1]) * multiplier);
   }
 
-  async function fetchHuggingFaceDownloads() {
+  async function fetchHuggingFaceRepositoryDownloads(type, repositoryId) {
+    var encodedId = repositoryId.split('/').map(encodeURIComponent).join('/');
+    var repository = await fetchJson(
+      'https://huggingface.co/api/' + type + '/' + encodedId + '?expand=downloadsAllTime'
+    );
+    if (!Number.isSafeInteger(repository.downloadsAllTime) || repository.downloadsAllTime < 0) {
+      throw new Error('Hugging Face download count is missing.');
+    }
+    return repository.downloadsAllTime;
+  }
+
+  async function fetchSolarRendererHuggingFaceDownloads() {
+    var repositories = [
+      ['models', 'Enderfga/SolarRenderer'],
+      ['datasets', 'Enderfga/SolarRenderer-Data']
+    ];
+    var downloads = await Promise.all(repositories.map(function (item) {
+      return fetchHuggingFaceRepositoryDownloads(item[0], item[1]);
+    }));
+    return downloads.reduce(function (total, value) {
+      return total + value;
+    }, 0);
+  }
+
+  async function fetchSolarWMHuggingFaceDownloads() {
     var collection = await fetchJson('https://huggingface.co/api/collections/junchaoh-cs/solarwm');
     var repositories = (collection.items || []).filter(function (item) {
       return (item.type === 'model' || item.type === 'dataset') && item.id;
@@ -81,14 +107,7 @@
 
     var downloads = await Promise.all(uniqueRepositories.map(async function (item) {
       var type = item.type === 'dataset' ? 'datasets' : 'models';
-      var repositoryId = item.id.split('/').map(encodeURIComponent).join('/');
-      var repository = await fetchJson(
-        'https://huggingface.co/api/' + type + '/' + repositoryId + '?expand=downloadsAllTime'
-      );
-      if (!Number.isSafeInteger(repository.downloadsAllTime) || repository.downloadsAllTime < 0) {
-        throw new Error('Hugging Face download count is missing.');
-      }
-      return repository.downloadsAllTime;
+      return fetchHuggingFaceRepositoryDownloads(type, item.id);
     }));
 
     return downloads.reduce(function (total, value) {
@@ -125,8 +144,10 @@
   }
 
   [
-    ['solarwm-github-metric', fetchGitHubStars],
-    ['solarwm-huggingface-metric', fetchHuggingFaceDownloads],
+    ['solarrenderer-github-metric', function () { return fetchGitHubStars('Enderfga/SolarRenderer'); }],
+    ['solarrenderer-huggingface-metric', fetchSolarRendererHuggingFaceDownloads],
+    ['solarwm-github-metric', function () { return fetchGitHubStars('Junchao-cs/SolarWM'); }],
+    ['solarwm-huggingface-metric', fetchSolarWMHuggingFaceDownloads],
     ['solarwm-modelscope-metric', fetchModelScopeDownloads]
   ].forEach(function (entry) {
     entry[1]().then(function (value) {
