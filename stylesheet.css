@@ -111,6 +111,60 @@ name {
   position: relative;
 }
 
+.solarx-report-card .one {
+  width: 100%;
+  height: auto;
+}
+
+.solarx-report-card picture,
+.solarx-report-card img {
+  display: block;
+}
+
+.solarx-report-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+@media (min-width: 761px) {
+  .solarx-report-card .solarx-report-media {
+    height: 1px;
+  }
+
+  .solarx-report-card .one,
+  .solarx-report-card picture,
+  .solarx-report-card img {
+    height: 100%;
+  }
+
+  .solarx-report-card img {
+    background: #141414;
+  }
+}
+
+@media (max-width: 760px) {
+  .solarx-report-card {
+    display: block;
+  }
+
+  .solarx-report-card td {
+    display: block;
+    box-sizing: border-box;
+    width: 100% !important;
+  }
+
+  .solarx-report-card .solarx-report-media {
+    padding-bottom: 0 !important;
+  }
+
+  .solarx-report-card .solarx-report-details {
+    padding-top: 12px !important;
+  }
+}
+
 .two {
   width: 160px;
   height: 160px;
