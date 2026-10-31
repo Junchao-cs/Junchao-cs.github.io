@@ -160,6 +160,7 @@ style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-
 <ul>
 <li> <b>[Oct. 2026]</b> Our technical report <a href="https://enderfga.cn/SolarRenderer/">SolarRenderer</a> is now available, with <a href="https://github.com/Enderfga/SolarRenderer">code</a> released!</li>
 <li> <b>[Oct. 2026]</b> Our benchmark <a href="https://arxiv.org/abs/2610.20693">Orbia</a> is now available on arXiv, with <a href="https://github.com/worldbench/orbia">code</a> and <a href="https://huggingface.co/datasets/Orbia/Orbia">data</a> released!</li>
+<li> <b>[Oct. 2026]</b> Our <a href="https://solarx-team.github.io/SolarWM-H3-Realtime/">SolarWM-H3 Realtime</a> blog is online, with <a href="https://github.com/Junchao-cs/SolarWM/tree/main/deploy/solar_wm">code</a> for low-latency interactive video generation from an image and prompt and real-time camera control!</li>
 <li> <b>[Oct. 2026]</b> Our paper <a href="https://arxiv.org/abs/2610.12412">WorldCast</a> is now available on arXiv!</li>
 <li> <b>[Oct. 2026]</b> Our SolarX-Team blog post <a href="https://solarx-team.github.io/H3-Streaming-VAE-Decoder/">H3 Streaming VAE Decoder</a> is online!</li>
 <li> <b>[Sep. 2026]</b> <a href="https://junchao-cs.github.io/MemoryForcing-demo/">Memory Forcing</a> accepted to <a href="https://neurips.cc/">NeurIPS 2026</a>!</li>
@@ -189,7 +190,7 @@ style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-
 <tbody>
 <tr>
 <td style="padding:20px;width:100%;vertical-align:top">
-<heading>Technical Reports</heading>
+<heading>SolarX Technical Reports</heading>
 </td>
 </tr>
 </tbody>
@@ -202,7 +203,10 @@ style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-
 <tr>
 <td style="padding:20px;width:30%;vertical-align:top;">
 <div class="one">
-<img src='images/SolarRenderer.webp' width="190" style="height:160px;object-fit:cover;object-position:center;border-radius:4px;" alt="SolarRenderer project poster">
+<picture>
+<source media="(prefers-reduced-motion: reduce)" srcset="images/SolarRenderer.webp">
+<img src="images/SolarRenderer.gif" width="190" height="107" loading="lazy" style="width:190px;height:auto;border-radius:4px;" alt="SolarRenderer animated project demo">
+</picture>
 </div>
 </td>
 <td style="padding:20px;width:70%;vertical-align:top">
@@ -210,7 +214,7 @@ style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-
 <papertitle>SolarRenderer: Few-Step Generative Reference Rendering</papertitle>
 </a>
 <br>
-Guian Fang, Shengju Qian, Dongyue Lu, <strong>Junchao Huang</strong>, Lutao Jiang, Xin Wang, Yiren Song, Li Jiang, Mike Zheng Shou
+Guian Fang, Shengju Qian, Dongyue Lu, <strong>Junchao Huang</strong>, et al. (SolarX-Team)
 <br>
 <em>Technical Report</em>, 2026
 <span class="paper-metrics" aria-label="SolarRenderer project metrics" aria-live="polite">
@@ -231,7 +235,7 @@ Guian Fang, Shengju Qian, Dongyue Lu, <strong>Junchao Huang</strong>, Lutao Jian
 <a href="https://huggingface.co/datasets/Enderfga/SolarRenderer-Data">data</a>
 <p></p>
 <p>
-SolarRenderer turns structural references into finished video in four sampling steps with a lightweight control adapter for fast, streaming-friendly rendering.
+SolarRenderer turns structural references into finished video in four sampling steps with a lightweight control adapter for fast, streaming-friendly rendering. It supports 16 structure types, including 11 unseen during training, while the first frame and prompt set the visual style.
 </p>
 </td>
 </tr>
@@ -239,7 +243,10 @@ SolarRenderer turns structural references into finished video in four sampling s
 <tr>
 <td style="padding:20px;width:30%;vertical-align:top;">
 <div class="one">
-<img src='images/SolarWM.png' width="190" style="height:160px;object-fit:cover;object-position:center;border-radius:4px;">
+<picture>
+<source media="(prefers-reduced-motion: reduce)" srcset="images/SolarWM.png">
+<img src="images/SolarWM.gif" width="190" height="107" loading="lazy" style="width:190px;height:auto;border-radius:4px;" alt="SolarWM animated project demo">
+</picture>
 </div>
 </td>
 <td style="padding:20px;width:70%;vertical-align:top">
@@ -247,7 +254,7 @@ SolarRenderer turns structural references into finished video in four sampling s
 <papertitle>SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models</papertitle>
 </a>
 <br>
-<strong>Junchao Huang</strong>, Guian Fang, Shengju Qian, Xianghao Kong, Zhuoran Zhao, Wei Huang, Yihua Du, Zixin Zhang, Justin Cui, Yuchao Gu, Yukang Chen, Xinting Hu, Tianyu He, Shaoshuai Shi, Zhuotao Tian, Xin Wang, Mike Zheng Shou, Li Jiang
+<strong>Junchao Huang</strong>, Guian Fang, Shengju Qian, et al. (SolarX-Team)
 <br>
 <em>Technical Report</em>, 2026
 <span class="paper-metrics" aria-label="SolarWM project metrics" aria-live="polite">
@@ -271,7 +278,7 @@ SolarRenderer turns structural references into finished video in four sampling s
 <a href="https://huggingface.co/datasets/junchaoh-cs/SolarWM-Data">data</a>
 <p></p>
 <p>
-We introduce SolarWM, a fully open foundation for interactive video world models that unifies 1.43 million clips, scalable backbone-native training, and real-time long-horizon interaction within one reproducible framework.
+We introduce SolarWM, a fully open foundation for interactive video world models that unifies 1.43 million clips, scalable backbone-native training, and real-time long-horizon interaction within one reproducible framework. It includes SolarWM-H3, the first MiniMax-H3-based world model for streaming, few-step interaction, with released training and inference code, weights, and pre-encoded data across all three stages.
 </p>
 </td>
 </tr>
