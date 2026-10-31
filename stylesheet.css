@@ -116,6 +116,11 @@ name {
   height: auto;
 }
 
+.solarx-report-card .solarx-report-authors {
+  display: block;
+  margin-bottom: 4px;
+}
+
 .solarx-report-card picture,
 .solarx-report-card img {
   display: block;
